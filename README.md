@@ -15,9 +15,6 @@ Navegador -> FastAPI (puerto 8000)
 
 Todo se ejecuta localmente. Las credenciales `test/test` son ficticias y solo se usan contra `http://localstack:4566` o `http://localhost:4566`.
 
-## Requisitos
-
-
 ## Ejecución
 
 Desde PowerShell, en esta carpeta:
