@@ -17,9 +17,6 @@ Todo se ejecuta localmente. Las credenciales `test/test` son ficticias y solo se
 
 ## Requisitos
 
-- Windows 10/11 con WSL 2.
-- Docker Desktop con motor Linux activo.
-- Docker Compose v2.
 
 ## Ejecución
 
@@ -39,7 +36,6 @@ Usuario: admin
 Contraseña: Admin123!
 ```
 
-No reutilizar estas credenciales fuera del laboratorio.
 
 ## Flujo de demostración
 
@@ -105,11 +101,3 @@ Para borrar también los datos persistidos del laboratorio:
 docker compose down -v
 ```
 
-## Video de máximo cinco minutos
-
-1. 0:00–0:30: arquitectura y contenedores.
-2. 0:30–1:30: catálogo, carrito y compra.
-3. 1:30–2:30: login y pedidos en DynamoDB.
-4. 2:30–3:15: imagen de usuario en S3.
-5. 3:15–4:15: simulador y mensajes en SQS.
-6. 4:15–5:00: evidencias Docker/AWS CLI y cierre.
