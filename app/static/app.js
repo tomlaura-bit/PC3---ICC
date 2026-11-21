@@ -79,8 +79,8 @@ async function refreshAdmin() {
 }
 
 async function start() {
-  try { const [products,health]=await Promise.all([jsonFetch('/api/products'),jsonFetch('/api/health')]); state.products=products; renderCatalog(); $('health').textContent=`AWS local activo · ${health.products} productos · ${health.orders} pedidos`; }
-  catch(error){$('health').textContent=`Servicios no disponibles: ${error.message}`;}
+  try { state.products=await jsonFetch('/api/products'); renderCatalog(); }
+  catch(error){ console.error('Servicios no disponibles:', error); }
 }
 $('checkout').addEventListener('click',checkout);
 $('login-form').addEventListener('submit',login);
