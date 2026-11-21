@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC3 Tienda LocalStack</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Cognitive Computing PC3</p>
+      <h1>Tienda LocalStack</h1>
+      <p class="subtitle">Catálogo, carrito y pedidos sobre DynamoDB, S3 y SQS</p>
+    </div>
+    <div id="health" class="status">Comprobando servicios...</div>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-title">
+        <div><p class="eyebrow">Catálogo</p><h2>Productos disponibles</h2></div>
+        <span id="product-count" class="badge">0 productos</span>
+      </div>
+      <div id="catalog" class="catalog"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <p class="eyebrow">Compra</p>
+      <h2>Tu carrito</h2>
+      <div id="cart" class="cart-empty">Agrega productos del catálogo.</div>
+      <label>Identificador del usuario<input id="user-id" value="cliente-demo" maxlength="80"></label>
+      <button id="checkout" class="primary">Realizar pedido</button>
+      <p id="checkout-message" class="message"></p>
+    </aside>
+
+    <section class="admin-section">
+      <div class="section-title">
+        <div><p class="eyebrow">Administración</p><h2>Panel de evidencias</h2></div>
+        <span id="admin-state" class="badge muted">No autenticado</span>
+      </div>
+      <div class="admin-grid">
+        <form id="login-form" class="card">
+          <h3>Acceso administrador</h3>
+          <label>Usuario<input id="admin-user" value="admin"></label>
+          <label>Contraseña<input id="admin-password" type="password" value="Admin123!"></label>
+          <button class="primary" type="submit">Ingresar</button>
+          <p id="login-message" class="message"></p>
+        </form>
+
+        <form id="image-form" class="card">
+          <h3>Imagen de usuario en S3</h3>
+          <label>ID de usuario<input id="image-user" value="cliente-demo"></label>
+          <label>Archivo de imagen<input id="image-file" type="file" accept="image/*"></label>
+          <button type="submit">Subir imagen</button>
+          <p id="image-message" class="message"></p>
+        </form>
+
+        <div class="card queue-card">
+          <h3>Cola SQS</h3>
+          <p class="metric" id="queue-count">-</p>
+          <p>mensajes visibles</p>
+          <button id="refresh-admin">Actualizar evidencias</button>
+        </div>
+      </div>
+
+      <div class="orders-card">
+        <h3>Pedidos en DynamoDB</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pedido</th><th>Usuario</th><th>Total</th><th>Estado</th><th>Fecha</th></tr></thead>
+            <tbody id="orders"><tr><td colspan="5">Inicia sesión para consultar.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>Aplicación académica local. No utiliza una cuenta real de AWS.</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
