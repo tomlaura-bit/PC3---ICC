@@ -86,30 +86,6 @@ powershell -ExecutionPolicy Bypass -File scripts/capture_evidence.ps1
 
 El script guarda salidas verificables en `evidence/` sin incluir secretos.
 
-### Capturas desde Docker Desktop
-
-Las siguientes imágenes fueron tomadas directamente desde Docker Desktop con los contenedores en ejecución y los registros reales de LocalStack:
-
-**Contenedores Docker**
-
-![Contenedores Docker saludables](evidence/docker-desktop-overview.png)
-
-**Actividad de servicios AWS en LocalStack**
-
-![Actividad AWS en LocalStack](evidence/docker-aws-services.png)
-
-**Base de datos DynamoDB**
-
-![Operaciones DynamoDB](evidence/docker-dynamodb.png)
-
-**Almacenamiento S3**
-
-![Operaciones S3](evidence/docker-s3.png)
-
-**Cola SQS**
-
-![Mensajes enviados a SQS](evidence/docker-sqs.png)
-
 ## Limpieza
 
 ```powershell
